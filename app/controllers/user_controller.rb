@@ -31,7 +31,7 @@ post '/user/update' do
 end
 
 get '/user/edit/:user_id' do
-  @user = User.find(params[:user_id]) if @user
+  @user = User.find(params[:user_id]) if current_user
   if @user && @user.id == current_user.id
     erb :edit_user
   else
