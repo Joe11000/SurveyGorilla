@@ -1,5 +1,13 @@
-<form action="/surveys/new" method="post">
-  <label for="name">
-  <input id="name" type="text" placeholder="survey name" name="name"><br>
-  <input type="submit" value="submit">
-</form> 
+<div class="container">
+
+  <form action="/surveys/new" method="post">
+    <h2><input id="name" type="text" placeholder="survey name" name="name"></h2><br>
+    <h3><input type="text" name="question" placeholder="survey question"><br></h3>
+    <input type="text" name="options[][text]" placeholder="first option"><br>
+    <input type="text" name="options[][text]" placeholder="second option"><br>
+    <input type="text" name="options[][text]" placeholder="third option"><br>
+    <input type="text" name="options[][text]" placeholder="fourth option"><br>
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
