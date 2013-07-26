@@ -11,6 +11,8 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
@@ -18,7 +20,7 @@
   <title></title>
 </head>
 <header>
-  <a class="nav_title" href='/'>Eric's Skeleton</a>
+  <a class="nav_title" href='/'>SurveyGorilla</a>
   <% if current_user %>
   <a class="logout" href="/logout">Logout</a>
   <a class="logout" href="/user/profile/<%= current_user.id %>">My Profile</a>

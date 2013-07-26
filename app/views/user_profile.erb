@@ -9,5 +9,11 @@
 		<li><a href="/user/edit/<%= current_user.id %>">Edit Profile</a> </li>
 	</ul>
 	<% end %>
+
+	<button><a class="survey" href='/surveys/users/<%= current_user.id %>'>My Surveys</a></button><br>
+	<button><a class="survey" href='/surveys/'>Take Survey</a></button><br>
+	<button><a class="survey" href='/surveys/new'>Create Survey</a></button><br>
+
+
 </div>
 
