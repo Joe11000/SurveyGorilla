@@ -4,5 +4,5 @@ class Survey < ActiveRecord::Base
 
    has_many :questions
    has_many :takers, :through => :reponses
-   belongs_to :creator, :class_name => 'User'
+   belongs_to :creator, class_name: 'User'
 end

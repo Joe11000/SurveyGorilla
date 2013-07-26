@@ -5,12 +5,9 @@ class User < ActiveRecord::Base
   validate  :email_valid?
   before_create :create_image_url
 
-  has_many :created_surveys, :source => :survey
+  has_many :created_surveys, class_name:'Survey', foreign_key: :creator_id
   has_many :responses, :foreign_key => :taker_id
-  has_many :surveys_taken, :through => :responses, :source => :survey
-
-
-
+  has_many :taken_surveys, :through => :responses, :source => :survey, foreign_key: :taken_id
 
   def password
     @password ||= BCrypt::Password.new(password_hash)
