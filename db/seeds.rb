@@ -1,8 +1,8 @@
 require 'faker'
 
-  # User.create({username: 'Eric',
-  #              email: 'eric.justin.allen@gmail.com',
-  #              password: 'password'})
+  User.create({username: 'Eric',
+               email: 'eric.justin.allen@gmail.com',
+               password: 'password'})
 
 
 5.times do
