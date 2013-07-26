@@ -23,6 +23,6 @@ User.all.each do |user|
   survey = Survey.all.sample
   survey.questions.all.each do |question|
     option = question.options.all.sample
-    comp_survey = user.responses.create(s urvey_id: survey.id, taker_id: user.id, option_id: option.id)
+    comp_survey = user.responses.create(survey_id: survey.id, taker_id: user.id, option_id: option.id)
   end
 end
