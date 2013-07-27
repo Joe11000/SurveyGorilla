@@ -10,6 +10,11 @@ end
 
 # create survey
 post '/surveys/new' do
+
+  puts "* * * * * * * * * *"
+  p params
+  puts "* * * * * * * * * *"
+
   @survey = Survey.build_survey(params, current_user)
   redirect to :"surveys/#{@survey.id}"
 end

@@ -1,3 +1,15 @@
-<%= @survey %>
 <button>Edit</button>
 <button>Delete</button>
+
+<h1><%= @survey.name %></h1>
+<ol id="questions">
+  <% @survey.questions.each do |question| %>
+
+    <li>Question : <%= question.text %></li>
+    <ol>
+    <% question.options.each do |option| %>
+      <li>Option : <%= option.text %></li>
+    <% end %>
+    </ol>
+  <% end %>
+</ol>

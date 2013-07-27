@@ -1,13 +1,25 @@
 <div class="container">
 
   <form action="/surveys/new" method="post">
-    <h2><input id="name" type="text" placeholder="survey name" name="name"></h2><br>
-    <h3><input type="text" name="question" placeholder="survey question"><br></h3>
-    <input type="text" name="options[][text]" placeholder="first option"><br>
-    <input type="text" name="options[][text]" placeholder="second option"><br>
-    <input type="text" name="options[][text]" placeholder="third option"><br>
-    <input type="text" name="options[][text]" placeholder="fourth option"><br>
-    <input type="submit" value="Submit">
 
+    <input id="name" type="text" placeholder="survey name" name="name"><br>
+
+    <div class="questions">
+      <div class="question">
+        <input type="text" name="survey_data[][question]" placeholder="survey question"><br>
+        <div class='option'>
+          <input class="option" type="text" name="survey_data[][options][][text]" placeholder="option"><a class="delete" href='#'>Delete</a>
+        </div>
+        <div class='option'>
+          <input class="option" type="text" name="survey_data[][options][][text]" placeholder="option"><a class="delete" href='#'>Delete</a>
+        </div>
+        <div class='buttons'>
+          <button><a class="add_option" href="#">Add Option</a></button>
+          <button><a class="add_question" href="#">Add Question</a></button>
+          <button><a class="delete_question" href="#">Delete Question</a></button>
+        </div>
+      </div>
+    </div>
+    <input id="submit" type="submit" value="Complete Survey">
   </form>
 </div>

@@ -8,8 +8,11 @@ class Survey < ActiveRecord::Base
 
    def self.build_survey(params, current_user)
     survey = self.create(name: params[:name], creator_id: current_user.id)
-    question = survey.questions.create(text: params[:question])
-    question.options.create(params[:options])
+    survey_data = params[:survey_data]
+    survey_data.each do |question_data|
+      question = survey.questions.create(text: question_data[:question])
+      question.options.create(question_data[:options])
+    end      
     return survey
    end
 end
