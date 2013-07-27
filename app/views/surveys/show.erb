@@ -1,5 +1,5 @@
-<button>Edit</button>
-<button>Delete</button>
+<div class="container">
+
 
 <h1><%= @survey.name %></h1>
 <ol id="questions">
@@ -13,3 +13,9 @@
     </ol>
   <% end %>
 </ol>
+<% if current_user %>
+  <button><a href="/survey/<%= @survey.id %>/results">Results</a></button>
+  <button><a href="/survey/edit/<%= @survey.id %>">Edit</a></button>
+  <button>Delete</button>
+<% end %>
+</div>
