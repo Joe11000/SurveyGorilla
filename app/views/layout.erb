@@ -3,8 +3,8 @@
 <head>
 
   <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="stylesheet" href="/css/application.css">
   <link rel="stylesheet" href="/css/custom.css">
+  <link rel="stylesheet" href="/css/table.css">
   
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
@@ -12,22 +12,26 @@
   <title></title>
 </head>
 <header>
+  <div id="logo"></div>
   <a class="nav_title" href='/'>SurveyGorilla</a>
   <% if current_user %>
   <a class="logout" href="/logout">Logout</a>
   <a class="logout" href="/user/profile/<%= current_user.id %>">My Profile</a>
   <% else %>
   <div class="login">
-    <a id="join" href="/user/create">Join</a>
+    <!-- <a id="join" href="/user/create">Join</a> -->
     <form class="login" action="/login" method="post">
       <input type="text" name="user[username]" placeholder="Username">
       <input type="password" name="user[password]" placeholder="Password">
       <input  class="button" type="submit" value="Login">
     </form>
   </div>
+
+
   <% end %>
 </header>
 <body >
   <%= yield %>
+  <iframe width="420" height="315" src="//www.youtube.com/embed/MAu63VqxnAE?autoplay=1" frameborder="0" allowfullscreen></iframe>
 </body>
 </html>

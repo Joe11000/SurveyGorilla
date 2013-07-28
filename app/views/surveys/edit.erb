@@ -1,0 +1,25 @@
+<div class="container">
+
+  <form action="/surveys/update/<%= @survey.id %>" method="post">
+    <input id="name" type="text" placeholder="survey name" value = "<%= @survey.name%>" name="name"><br>
+    <div class="questions">
+      <% @survey.questions.each do |question| %>
+        <div class="question">
+          <input type="text" name="survey_data[][question]" value = "<%= question.text %>" placeholder="survey question"><br>
+          <% question.options.each do |option| %>
+          <div class='option'>
+            <input class="option" type="text" name="survey_data[][options][][text]" value = "<%= option.text %>"placeholder="option"><a class="delete" href='#'>Delete</a>
+          </div>        
+          <% end %>
+          <div class='buttons'>
+            <button><a class="add_option" href="#">Add Option</a></button>
+            <button><a class="add_question" href="#">Add Question</a></button>
+            <button><a class="delete_question" href="#">Delete Question</a></button>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <input id="submit" type="submit" value="Complete Survey">
+  </form>
+</div>
+

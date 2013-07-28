@@ -21,6 +21,8 @@ gem 'bcrypt-ruby'
 
 gem 'gravatar-ultimate'
 
+gem 'googlecharts'
+
 group :test do
   gem 'faker'
   gem 'rspec'

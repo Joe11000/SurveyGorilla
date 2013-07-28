@@ -1,0 +1,13 @@
+<div class="container">
+  <ol>
+    <% @responses.all.each do |response| %>
+    <li>
+        Respondee: <%= response.taker.username %><br>
+        Survey Name: <%= response.survey.name %><br>
+        Question: <%= response.option.question.text %><br>
+        Response: <%= response.option.text  %>
+    </li>
+    <br>
+    <% end %>
+  </ol>
+</div>

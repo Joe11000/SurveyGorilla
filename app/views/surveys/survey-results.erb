@@ -1,0 +1,45 @@
+<div class="container">
+  <h1>Survey Name : <br><%= @survey.name %></h1>
+
+
+  <table class="table3">
+    <thead>
+      <th>Question</th>
+      <th>Choices</th>
+      <th>Total Count</th>
+      <th>Percentage</th>
+    </thead>
+    <tbody>
+
+      <% @survey.questions.each do |question| %>
+      <% @data_counts = [] %>
+      <% @options_label = [] %>
+
+      <% question.options.each_with_index do |option,index| %>
+        <tr>
+          <td><%= question.text if index == 0 %></td>
+          <% total_responses = question.responses.count %>
+          <% option_count = option.responses.count %>
+          <% percentage = (option_count / total_responses.to_f) * 100 %>
+          <td><%= option.text %></td>
+          <td><%= option.responses.count %></td>
+          <td><div id="bar1" class="bar" style="width: <%= percentage %>%;"></div><%= percentage.round %>% </td>
+        </tr>
+      <% end %>
+
+        <tr>
+          <td class='google-chart' colspan='4'>
+            <% question.options.each_with_index do |option| %>
+            <% @question_name = question.text %>
+            <% @data_counts << option.responses.count %>
+            <% @options_label << option.text %>
+            <% end %>
+            <img class="google-chart" src="<%= Gchart.pie_3d(:title => @question_name, :size => '400x200',
+            :data => @data_counts, :labels => @options_label) %>">
+          </td>
+        </tr>
+      <% end %><!-- end questions iteration-->
+
+    </tbody>
+  </table>
+</div>
