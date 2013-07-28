@@ -61,9 +61,6 @@ end
 
 get '/survey/:id/results' do
   @survey = Survey.find(params[:id])
-  
-
-
 
 
   erb :'surveys/survey-results'
