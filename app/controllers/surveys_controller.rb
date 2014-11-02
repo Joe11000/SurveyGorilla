@@ -7,8 +7,8 @@ end
 
 
 get '/surveys/users/:id' do
-  @surveys = Survey.find_all_by_creator_id(params[:id])
-  
+  @surveys = Survey.where(creator_id: params[:id])
+
 
   erb :'surveys/index'
 end
@@ -43,7 +43,7 @@ end
 post '/survey-response/:id' do
   # format array of hashes for responses
   array_of_option_ids = params[:question][0].values
-  
+
   array_of_formatted_hashes = []
   array_of_option_ids.each do |option_id|
     array_of_formatted_hashes << {survey_id: params[:id].to_i, taker_id:current_user.id, option_id:option_id.to_i}
@@ -71,7 +71,7 @@ end
 
 
 
-get '/responses-by-survey' do 
+get '/responses-by-survey' do
   @surveys = Survey.all
   erb :'surveys/responses-by-survey'
 end
