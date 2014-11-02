@@ -28,3 +28,7 @@ group :test do
   gem 'rspec'
   gem 'pry'
 end
+
+group :production do
+  gem 'rails_12factor'  # heroku deployment needs this
+end
