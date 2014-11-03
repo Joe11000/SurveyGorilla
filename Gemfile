@@ -24,10 +24,10 @@ gem 'bcrypt'
 gem 'gravatar-ultimate'
 
 gem 'googlecharts'
+  gem 'rspec'
 
 group :test do
   gem 'faker'
-  gem 'rspec'
   gem 'pry'
 end
 
