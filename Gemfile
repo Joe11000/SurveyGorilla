@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby "1.9.3"
 
 # PostgreSQL driver
+gem 'rake'
 gem 'pg'
 
 # Sinatra driver
@@ -15,11 +16,10 @@ gem 'thin'
 gem 'activesupport'
 gem 'activerecord'
 
-gem 'rake'
 
 gem 'shotgun'
 gem 'awesome_print'
-gem 'bcrypt-ruby'
+gem 'bcrypt'
 
 gem 'gravatar-ultimate'
 
