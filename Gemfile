@@ -27,8 +27,8 @@ gem 'googlecharts'
   gem 'rspec'
 
 group :test do
-  gem 'faker'
-  gem 'pry'
+  # gem 'faker'
+  # gem 'pry'
 end
 
 group :production do
