@@ -20,7 +20,7 @@ require "sinatra/reloader" if development?
 
 require 'erb'
 require 'ap'
-require 'pry'
+# require 'pry'
 
 require 'bcrypt'
 require 'gravatar-ultimate'
